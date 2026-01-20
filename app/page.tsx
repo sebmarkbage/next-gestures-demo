@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { ViewTransition } from "react";
+// @ts-ignore
 import { Before, LeftAlignedCrossFade } from './transitions.module.css';
 
 export default function HomeScreen() {
   return (
-    <ViewTransition update="none" enter={Before} exit={Before}>
+    <ViewTransition name="home" update="none" enter={Before} exit={Before}>
       <div className="flex flex-col h-full bg-white">
         {/* Toolbar */}
         <div className="bg-white border-b border-gray-200 px-4 py-3 safe-area-top flex items-center">

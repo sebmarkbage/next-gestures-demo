@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { ViewTransition } from "react";
+// @ts-ignore
 import { After, LeftAlignedCrossFade } from '../transitions.module.css';
 
 export default function DetailsScreen() {
   return (
-    <ViewTransition update="none" enter={After} exit={After}>
+    <ViewTransition name="detail" update="none" enter={After} exit={After}>
     <div className="flex flex-col h-full bg-white">
       {/* Toolbar with Back Button */}
       <div className="bg-white border-b border-gray-200 px-4 py-3 safe-area-top flex items-center gap-2">
