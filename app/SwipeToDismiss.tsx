@@ -106,6 +106,13 @@ export default function SwipeToDismiss({
     ) {
       return;
     }
+
+    // Disable overscroll on Safari which moves the sticky content.
+    // Unfortunately, this also means that we disable chaining.
+    // TODO: We should only disable it if no parent is scrollable in this axis.
+    scrollElement.style.overscrollBehaviorX = axis === "x" ? "none" : "auto";
+    scrollElement.style.overscrollBehaviorY = axis === "y" ? "none" : "auto";
+
     // After hydration we adjust the position so that it takes up double width which
     // enables scrolling. At the same time we snap the element's scroll position to
     // the starting point.
@@ -140,7 +147,7 @@ export default function SwipeToDismiss({
         activeGestureRef.current = null;
         cancelGesture();
       }
-    }
+    };
   }, [direction]);
 
   const scrollStyle = {
