@@ -1,6 +1,7 @@
 @keyframes enter-slide-right {
   0% {
     translate: -200px 0;
+    opacity: 0.5;
   }
   100% {
     translate: 0 0;
@@ -30,6 +31,7 @@
     translate: 0 0;
   }
   100% {
+    opacity: 0.5;
     translate: -200px 0;
   }
 }
