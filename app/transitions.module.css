@@ -53,6 +53,14 @@
   animation: exit-slide-right ease-out 0.3s;
 }
 
+/* Don't animate the thing scrolling out. We let the native scroll deal with that. */
+:root:active-view-transition-type(SwipeToDismissTransitionType) {
+  &::view-transition-new(.Before):only-child,
+  &::view-transition-new(.After):only-child {
+    animation: none !important;
+  }
+}
+
 ::view-transition-group(.LeftAlignedCrossFade) {
   z-index: 3;
   animation-duration: 0.3s;
