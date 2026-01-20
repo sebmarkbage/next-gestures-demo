@@ -133,6 +133,14 @@ export default function SwipeToDismiss({
         scrollElement.scrollTop = 0;
         break;
     }
+    return () => {
+      // If we unmount, make sure we cancel any on-going gesture so it doesn't hang.
+      const cancelGesture = activeGestureRef.current;
+      if (cancelGesture !== null) {
+        activeGestureRef.current = null;
+        cancelGesture();
+      }
+    }
   }, [direction]);
 
   const scrollStyle = {
