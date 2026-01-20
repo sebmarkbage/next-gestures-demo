@@ -1,0 +1,75 @@
+@keyframes enter-slide-right {
+  0% {
+    opacity: 0;
+    translate: -200px 0;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes enter-slide-left {
+  0% {
+    opacity: 0;
+    translate: 100% 0;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes exit-slide-right {
+  0% {
+    opacity: 1;
+    translate: 0 0;
+  }
+  100% {
+    opacity: 0;
+    translate: 100% 0;
+  }
+}
+
+@keyframes exit-slide-left {
+  0% {
+    opacity: 1;
+    translate: 0 0;
+  }
+  100% {
+    opacity: 0;
+    translate: -200px 0;
+  }
+}
+
+::view-transition-new(.Before) {
+  z-index: 1;
+  animation: enter-slide-right ease-out 0.3s;
+}
+::view-transition-old(.Before) {
+  z-index: 1;
+  animation: exit-slide-left ease-out 0.3s;
+}
+::view-transition-new(.After) {
+  z-index: 2;
+  animation: enter-slide-left ease-out 0.3s;
+}
+::view-transition-old(.After) {
+  z-index: 2;
+  animation: exit-slide-right ease-out 0.3s;
+}
+
+::view-transition-group(.LeftAlignedCrossFade) {
+  z-index: 3;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+}
+
+::view-transition-new(.LeftAlignedCrossFade),
+::view-transition-old(.LeftAlignedCrossFade) {
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  height: 100%;
+  object-fit: none;
+  object-position: left;
+}

@@ -1,17 +1,24 @@
 import Link from "next/link";
+import { ViewTransition } from "react";
+import { After, LeftAlignedCrossFade } from '../transitions.module.css';
 
 export default function DetailsScreen() {
   return (
+    <ViewTransition update="none" enter={After} exit={After}>
     <div className="flex flex-col h-full bg-white">
       {/* Toolbar with Back Button */}
       <div className="bg-white border-b border-gray-200 px-4 py-3 safe-area-top flex items-center gap-2">
+        <ViewTransition name="toolbar-back" default={LeftAlignedCrossFade}>
         <Link
           href="/"
           className="flex items-center gap-1 text-blue-500 active:opacity-70 transition-opacity -ml-2 pr-2"
         >
           <span className="font-normal">Back</span>
         </Link>
-        <h1 className="text-xl font-semibold text-gray-900">Details</h1>
+        </ViewTransition>
+        <ViewTransition name="toolbar-caption" default={LeftAlignedCrossFade}>
+          <h1 className="text-xl font-semibold text-gray-900">Details</h1>
+        </ViewTransition>
       </div>
 
       {/* Content */}
@@ -123,5 +130,6 @@ export default function DetailsScreen() {
         </div>
       </div>
     </div>
+    </ViewTransition>
   );
 }
