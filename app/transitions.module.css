@@ -34,20 +34,22 @@
   }
 }
 
-::view-transition-new(.Before) {
+::view-transition-group(.Before) {
   z-index: 1;
+}
+::view-transition-group(.After) {
+  z-index: 2;
+}
+::view-transition-new(.Before) {
   animation: enter-slide-right ease-out 0.3s;
 }
 ::view-transition-old(.Before) {
-  z-index: 1;
   animation: exit-slide-left ease-out 0.3s;
 }
 ::view-transition-new(.After) {
-  z-index: 2;
   animation: enter-slide-left ease-out 0.3s;
 }
 ::view-transition-old(.After) {
-  z-index: 2;
   animation: exit-slide-right ease-out 0.3s;
 }
 
