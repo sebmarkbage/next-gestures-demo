@@ -40,16 +40,16 @@
 ::view-transition-group(.After) {
   z-index: 2;
 }
-::view-transition-new(.Before) {
+::view-transition-new(.Before):only-child {
   animation: enter-slide-right ease-out 0.3s;
 }
-::view-transition-old(.Before) {
+::view-transition-old(.Before):only-child {
   animation: exit-slide-left ease-out 0.3s;
 }
-::view-transition-new(.After) {
+::view-transition-new(.After):only-child {
   animation: enter-slide-left ease-out 0.3s;
 }
-::view-transition-old(.After) {
+::view-transition-old(.After):only-child {
   animation: exit-slide-right ease-out 0.3s;
 }
 
