@@ -43,16 +43,16 @@
   z-index: 2;
 }
 ::view-transition-new(.Before):only-child {
-  animation: enter-slide-right ease-out 0.3s;
+  animation: enter-slide-right ease-out 0.3s forwards;
 }
 ::view-transition-old(.Before):only-child {
-  animation: exit-slide-left ease-out 0.3s;
+  animation: exit-slide-left ease-out 0.3s forwards;
 }
 ::view-transition-new(.After):only-child {
-  animation: enter-slide-left ease-out 0.3s;
+  animation: enter-slide-left ease-out 0.3s forwards;
 }
 ::view-transition-old(.After):only-child {
-  animation: exit-slide-right ease-out 0.3s;
+  animation: exit-slide-right ease-out 0.3s forwards;
 }
 
 /* Don't animate the thing scrolling out. We let the native scroll deal with that. */
