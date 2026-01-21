@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   experimental: {
     gestureTransition: true,
-    cacheComponents: false,
+    cacheComponents: true,
   },
 };
 
